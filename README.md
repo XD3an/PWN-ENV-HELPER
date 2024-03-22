@@ -28,9 +28,9 @@ Build the PWN environment with Dockerfile or docker-compose.yml
     ```bash
     python setup.py -m $machine  -b $bin_name -p $port
     ```
-    - `$machine` is the architecture of the binary file.
-    - `$bin_name` is the name of the binary file.
-    - `$port` is the port number of the service.
+    - `$machine` is the architecture of the binary file (images name, e.g. ubuntu:22.04).
+    - `$bin_name` is the name of the binary file (binary name).
+    - `$port` is the port number of the service (port number in container not the public port number).
 
 2. put the binary file in the `bin` directory
     - the name of the binary file should be the same as the `$bin_name`. (name=`$bin_name`)
