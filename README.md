@@ -42,7 +42,7 @@ Build the PWN environment with Dockerfile or docker-compose.yml
 
 1. Docker Image Build
     ```bash
-    sudo docker build -t "image_name" .
+    docker build -t "image_name" .
     ```
 2. Run the docker container with Docker Image
     ```bash
@@ -54,7 +54,7 @@ Build the PWN environment with Dockerfile or docker-compose.yml
 
 1. Run the docker container with `docker-compose.yml`
     ```bash
-    sudo docker-compose up -d
+    docker-compose up -d
     ```
 
 ## Capture traffic
