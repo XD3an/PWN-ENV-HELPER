@@ -35,16 +35,16 @@ Build the PWN environment with Dockerfile or docker-compose.yml
     - `$bin_name` is the name of the binary file.
     - `$port` is the port number of the service.
 
-2. Put the binary file in the `bin` directory.
+2. put the binary file in the `bin` directory
     - the name of the binary file should be the same as the `$bin_name`. (name=`$bin_name`)
 
 #### Build with Dockerfile
 
-1. Docker Image Build
+1. build the docker Image 
     ```bash
     docker build -t "image_name" .
     ```
-2. Run the docker container with Docker Image
+2. run the docker container with docker image
     ```bash
     docker run -d -p "0.0.0.0:$PUN_PORT:9999" -h "hostname" --name="container_name" image_name
     ```
