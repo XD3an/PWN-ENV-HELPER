@@ -1,8 +1,7 @@
 # PWN_ENV-Helper - 胖環境搭建助手
 
-- Support C, C++ source code.
-    - `setup.py` is used to build the file structure.
-    - Support Dockerfile and docker-compose.yml to build the PWN environment.
+- `setup.py` is used to build the file structure.
+- Support Dockerfile and docker-compose.yml to build the PWN environment.
 
 - Compile the source code to binary with `Makefile`, `gcc`.
 
