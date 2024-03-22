@@ -18,9 +18,12 @@ RUN mkdir /home/ctf/dev && \
     chmod 666 /home/ctf/dev/*
 
 RUN mkdir /home/ctf/bin && \
-    cp /bin/sh /home/ctf/bin && \
+    cp /bin/whoami /home/ctf/bin && \
+    cp /bin/id /home/ctf/bin && \
+    cp /bin/pwd /home/ctf/bin && \
     cp /bin/ls /home/ctf/bin && \
-    cp /bin/cat /home/ctf/bin
+    cp /bin/cat /home/ctf/bin && \
+    cp /bin/sh /home/ctf/bin
 
 COPY ./xinetd /etc/xinetd.d/ctf
 COPY ./start.sh /start.sh
