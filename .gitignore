@@ -1,0 +1,7 @@
+/bin/*
+/src/*
+/tmp/*
+Makefile
+Dockerfile
+xinetd
+start.sh
