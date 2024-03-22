@@ -18,7 +18,6 @@ RUN mkdir /home/ctf/dev && \
     chmod 666 /home/ctf/dev/*
 
 RUN mkdir /home/ctf/bin && \
-    cp /bin/whoami /home/ctf/bin && \
     cp /bin/id /home/ctf/bin && \
     cp /bin/pwd /home/ctf/bin && \
     cp /bin/ls /home/ctf/bin && \
