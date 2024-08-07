@@ -1,9 +1,10 @@
-# PWN_ENV-Helper - 胖環境搭建助手
+# PWN-ENV-Helper - 胖環境搭建助手
 
-- `setup.py` is used to build the file structure.
-- Support Dockerfile and docker-compose.yml to build the PWN environment.
+輔助搭建 PWN 的小工具，支援 Dockerfile 和 docker-compose.yml 來建立 PWN 環境。
+- `setup.py`：用來建立檔案結構。
+- 支援 Dockerfile 和 docker-compose.yml 來建立 PWN 環境。
 
--  File Structure
+-  檔案結構
     ```
     + src/
     |   |
@@ -22,37 +23,40 @@
     ```
 ## Usage
 
-Build the PWN environment with Dockerfile or docker-compose.yml
+建立 PWN 環境，使用 Dockerfile 或 docker-compose.yml
 
-1. build file structure
+步驟：
+1. 使用 `setup.py` 建立檔案結構
     ```bash
     python setup.py -m $machine  -b $bin_name -p $port
     ```
-    - `$machine` is the architecture of the binary file (images name, e.g. ubuntu:22.04).
-    - `$bin_name` is the name of the binary file (binary name).
-    - `$port` is the port number of the service (service port number in container).
+    - `$machine` 指定機器的架構 (images name, e.g. ubuntu:22.04).
+    - `$bin_name` 指定 binary file 的名稱 (binary name).
+    - `$port` 指定服務的 port number (service port number in container).
 
-2. put the binary file in the `bin` directory
-    - the name of the binary file should be the same as the `$bin_name`. (name=`$bin_name`)
+2. 將 binary file 放在 `bin` 目錄下
+    - binary file 的名稱應該與 `$bin_name` 相同。 (name=`$bin_name`)
+
+3. 根據 `Dockerfile` 或 `docker-compose.yml` 來建立 PWN 環境，並啟動服務。
 
 #### Build with Dockerfile
 
-1. build the docker Image 
+1. 建立 Docker image 
     ```bash
     docker build -t "image_name" .
     ```
-2. run the docker container with docker image
+2. 啟動 Docker container
     ```bash
     docker run -d -p "0.0.0.0:$PUBLIC_PORT:$SERVICE_PORT" -h "hostname" --name="container_name" image_name
     ```
 
-- Warning
-    - `$SERVICE_PORT` is the port number of the service in the container.
-    - `$PUBLIC_PORT` is the pubilc port number of the service.
+- 警告：在啟動 Docker container 時，請確保以下參數正確：
+    - `$SERVICE_PORT` 是 container 內服務的 port number。
+    - `$PUBLIC_PORT` 是服務的公開 port number。
 
 #### Build with docker-compose.yml 
 
-1. Run the docker container with `docker-compose.yml`
+1. 啟動 Docker container
     ```bash
     docker-compose up -d
     ```
